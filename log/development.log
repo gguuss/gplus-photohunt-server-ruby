@@ -1,0 +1,16 @@
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mDirectedUserToUserEdge Load (5.2ms)[0m  SELECT "directed_user_to_user_edges".* FROM "directed_user_to_user_edges" WHERE "directed_user_to_user_edges"."owner_user_id" = $1  [["owner_user_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDirectedUserToUserEdge Load (0.2ms)[0m  [1mSELECT "directed_user_to_user_edges".* FROM "directed_user_to_user_edges" WHERE "directed_user_to_user_edges"."owner_user_id" = $1[0m  [["owner_user_id", 1]]
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."owner_user_id" IN (2)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mDirectedUserToUserEdge Load (0.2ms)[0m  SELECT "directed_user_to_user_edges".* FROM "directed_user_to_user_edges" WHERE "directed_user_to_user_edges"."owner_user_id" = $1  [["owner_user_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "photos" WHERE "photos"."owner_user_id" IN (2)[0m
+  [1m[36mVote Load (0.5ms)[0m  [1mSELECT "votes".* FROM "votes" ORDER BY "votes"."id" DESC LIMIT 1[0m
+  [1m[35mVote Load (0.4ms)[0m  SELECT "votes".* FROM "votes" ORDER BY "votes"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (27.5ms)[0m  DELETE FROM "votes" WHERE "votes"."id" = $1  [["id", 2]]
+  [1m[36m (13.0ms)[0m  [1mCOMMIT[0m
