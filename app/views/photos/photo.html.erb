@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript">
+    window.location.href = "<%= @redirect_url %>";
+  </script>
+  <title>Photo by <%= @photo.owner_display_name %> for <%= @photo.theme_display_name %> | PhotoHunt</title>
+</head>
+<body itemscope itemtype="http://schema.org/Thing">
+  <h1 itemprop="name">Photo by <%= @photo.owner_display_name %> for <%= @photo.theme_display_name %> | PhotoHunt</h1>
+  <img itemprop="image" src="<%= @photo.thumbnail_url %>" />
+  <p itemprop="description"><%= @photo.owner_display_name %> needs your vote to win this hunt.</p>
+</body>
+</html>
