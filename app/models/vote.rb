@@ -34,7 +34,7 @@ class Vote < ActiveRecord::Base
     }
 
     plus = get_plus(client)
-    result = client.execute!(:api_method => plus.moments.insert,
+    result = client.execute(:api_method => plus.moments.insert,
       :parameters => {'userId' => 'me', 'collection' => 'vault'},
       :body_object => moment,
       :headers => {'Content-Type' => 'application/json'})
