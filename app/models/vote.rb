@@ -34,7 +34,9 @@ class Vote < ActiveRecord::Base
     }
 
     plus = get_plus(client)
-    result = client.execute!(:api_method => plus.moments.insert,
+    # This will fail if the app is running on localhost.
+    # photo.photo_content_url must be visible to Google.
+    result = client.execute(:api_method => plus.moments.insert,
       :parameters => {'userId' => 'me', 'collection' => 'vault'},
       :body_object => moment,
       :headers => {'Content-Type' => 'application/json'})
