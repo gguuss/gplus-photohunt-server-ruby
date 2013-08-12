@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20130724030000) do
     t.integer "friend_user_id"
   end
 
-  add_index "directed_user_to_user_edges", ["friend_user_id"], name: "index_directed_user_to_user_edges_on_friend_user_id", using: :btree
-  add_index "directed_user_to_user_edges", ["owner_user_id"], name: "index_directed_user_to_user_edges_on_owner_user_id", using: :btree
+  add_index "directed_user_to_user_edges", ["friend_user_id"], name: "index_directed_user_to_user_edges_on_friend_user_id"
+  add_index "directed_user_to_user_edges", ["owner_user_id"], name: "index_directed_user_to_user_edges_on_owner_user_id"
 
   create_table "photos", force: true do |t|
     t.integer  "owner_user_id"
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20130724030000) do
     t.datetime "image_updated_at"
   end
 
-  add_index "photos", ["owner_user_id"], name: "index_photos_on_owner_user_id", using: :btree
-  add_index "photos", ["theme_display_name"], name: "index_photos_on_theme_display_name", using: :btree
-  add_index "photos", ["theme_id"], name: "index_photos_on_theme_id", using: :btree
+  add_index "photos", ["owner_user_id"], name: "index_photos_on_owner_user_id"
+  add_index "photos", ["theme_display_name"], name: "index_photos_on_theme_display_name"
+  add_index "photos", ["theme_id"], name: "index_photos_on_theme_id"
 
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20130724030000) do
     t.datetime "updated_at"
   end
 
-  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", using: :btree
-  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
 
   create_table "themes", force: true do |t|
     t.string  "display_name"
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 20130724030000) do
     t.integer "preview_photo_id"
   end
 
-  add_index "themes", ["created"], name: "index_themes_on_created", using: :btree
-  add_index "themes", ["start"], name: "index_themes_on_start", using: :btree
+  add_index "themes", ["created"], name: "index_themes_on_created"
+  add_index "themes", ["start"], name: "index_themes_on_start"
 
   create_table "users", force: true do |t|
     t.string  "email"
@@ -71,17 +71,17 @@ ActiveRecord::Schema.define(version: 20130724030000) do
     t.integer "google_expires_at",               limit: 8
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
-  add_index "users", ["google_access_token"], name: "index_users_on_google_access_token", using: :btree
-  add_index "users", ["google_display_name"], name: "index_users_on_google_display_name", using: :btree
-  add_index "users", ["google_user_id"], name: "index_users_on_google_user_id", using: :btree
+  add_index "users", ["email"], name: "index_users_on_email"
+  add_index "users", ["google_access_token"], name: "index_users_on_google_access_token"
+  add_index "users", ["google_display_name"], name: "index_users_on_google_display_name"
+  add_index "users", ["google_user_id"], name: "index_users_on_google_user_id"
 
   create_table "votes", force: true do |t|
     t.integer "owner_user_id"
     t.integer "photo_id"
   end
 
-  add_index "votes", ["owner_user_id"], name: "index_votes_on_owner_user_id", using: :btree
-  add_index "votes", ["photo_id"], name: "index_votes_on_photo_id", using: :btree
+  add_index "votes", ["owner_user_id"], name: "index_votes_on_owner_user_id"
+  add_index "votes", ["photo_id"], name: "index_votes_on_photo_id"
 
 end
